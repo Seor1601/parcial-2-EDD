@@ -57,8 +57,11 @@ class ListaCircular:
         if not self.head or self.head.next == self.head:
             return self.head
         current = self.head
+        while current.next != self.head:
+            current = current.next
+            
         while current.next != current:
-            for i in range(m-1):
+            for i in range(m - 1):
                 current = current.next
             victima = current.next
             salto = victima.dato % 5 == 0 
